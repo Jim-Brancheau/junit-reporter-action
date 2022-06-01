@@ -18,15 +18,11 @@ inputs:
   testOutputPath:
     description: 'The path to the JUnit output file.'
     required: true
-  userApiKey:
-    description: 'Your New Relic User API key.'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
     NEW_RELIC_INGEST_LICENSE_KEY: ${{ inputs.ingestLicenseKey }}
-    NEW_RELIC_USER_API_KEY: ${{ inputs.userApiKey }}
     NEW_RELIC_ACCOUNT_ID: ${{ inputs.accountId }}
     NEW_RELIC_REGION: ${{ inputs.region }}
     NEW_RELIC_TEST_OUTPUT_PATH: ${{ inputs.testOutputPath }}

@@ -3,6 +3,8 @@ name: Test Suite
 on:
   pull_request:
   push:
+    branches:
+      - main
 
 jobs:
   basic_test:
